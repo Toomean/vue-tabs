@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <tabs>
       <tab :title="'Tab1'">
         <h1>Tab 1 content</h1>
