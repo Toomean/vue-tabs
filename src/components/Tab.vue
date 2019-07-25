@@ -1,6 +1,5 @@
 <template>
     <div class="vue-tabs__item">
-        <slot name="title" />
         <slot />
     </div>
 </template>
