@@ -103,26 +103,22 @@ export default {
 </script>
 
 <style lang="scss">
-
 .vue-tabs {
-  &__nav {
+  $bl: '.vue-tabs';
+
+  #{$bl}__nav {
     display: flex;
     align-items: baseline;
     justify-content: center;
   }
-  &__nav-item {
-
+  #{$bl}__nav-item {
   }
-  &__content {
-
+  #{$bl}__panel {
+    &[hidden="hidden"] {
+      display: none;
+    }
+  }
+  #{$bl}__panel-container {
   }
 }
-
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-
 </style>
