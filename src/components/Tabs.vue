@@ -8,6 +8,10 @@ export default {
       type: Number,
       default: 0,
     },
+    transitionName: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {
@@ -52,6 +56,7 @@ export default {
         .map((panel, index) => (
           <div
             class="vue-tabs__panel"
+            key={index}
             attrs={ this.getPanelAria(index) }
           >
             { panel }
@@ -95,7 +100,11 @@ export default {
     return (
       <div class="vue-tabs">
         { this.tabList }
-        { this.tabPanels }
+        <transition name={ this.transitionName } mode="out-in">
+          <div key={ this.activeIndex }>
+            { this.tabPanels }
+          </div>
+        </transition>
       </div>
     );
   },
@@ -119,6 +128,15 @@ export default {
     }
   }
   #{$bl}__panel-container {
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .4s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 </style>

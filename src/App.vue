@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <tabs>
+    <tabs transitionName="fade">
       <tab :title="'Tab1'">
         <h1>Tab 1 content</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
