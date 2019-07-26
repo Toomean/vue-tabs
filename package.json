@@ -1,7 +1,7 @@
 {
-  "name": "vue-tabs",
+  "name": "vue-tmn-tabs",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,6 +9,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
+  "main": "dist/vue-tabs.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
