@@ -21,47 +21,42 @@ export default {
       return this.$slots.default
         .filter(({ tag }) => tag === 'vue-component-2-vue-tabs-item');
     },
-    tabsNavigation() {
+    tabNav() {
       return this.tabs
         .map(({ componentOptions }, index) => {
           const { title } = componentOptions.propsData;
 
           return (
-            <div
-              class="vue-tabs__nav-item"
-              role="tab"
-              aria-selected="false"
-              aria-controls={index}
+            <button
+              class={ this.getTabClasses(index) }
+              attrs={ this.getTabAria(index) }
               onClick={ e => this.switchTab(e, index) }
             >
-              {title}
-            </div>
+              { title }
+            </button>
           );
         });
     },
-    tabsNavWrapper() {
+    tabList() {
       return (
         <div
           class="vue-tabs__nav"
           role="tablist"
         >
-          {this.tabsNavigation}
+          { this.tabNav }
         </div>
       );
     },
-    tabsContent() {
-      return (
-        <div
-          class="vue-tabs__content"
-          role="tabpanel"
-        >
-          <transition name="fade" mode="out-in">
-            <div key={this.activeIndex}>
-              {this.tabs[this.activeIndex]}
-            </div>
-          </transition>
-        </div>
-      );
+    tabPanels() {
+      return this.tabs
+        .map((panel, index) => (
+          <div
+            class="vue-tabs__panel"
+            attrs={ this.getPanelAria(index) }
+          >
+            { panel }
+          </div>
+        ));
     },
   },
 
@@ -69,13 +64,38 @@ export default {
     switchTab(e, index) {
       this.activeIndex = index;
     },
+    isTabActive(index) {
+      return this.activeIndex === index;
+    },
+    getTabClasses(index) {
+      return [
+        'vue-tabs__nav-item',
+        { '--active': this.isTabActive(index) },
+      ];
+    },
+    getTabAria(index) {
+      return {
+        role: 'tab',
+        tabindex: !this.isTabActive(index) && -1,
+        'aria-selected': this.isTabActive(index) ? 'true' : 'false',
+        'aria-controls': `tab-${index}`,
+      };
+    },
+    getPanelAria(index) {
+      return {
+        role: 'tabpanel',
+        tabindex: 0,
+        hidden: this.activeIndex !== index,
+        'aria-labelledby': `tab-${index}`,
+      };
+    },
   },
 
   render() {
     return (
       <div class="vue-tabs">
-        {this.tabsNavWrapper}
-        {this.tabsContent}
+        { this.tabList }
+        { this.tabPanels }
       </div>
     );
   },

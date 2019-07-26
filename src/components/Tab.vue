@@ -1,7 +1,7 @@
 <template>
-    <div class="vue-tabs__item">
-        <slot />
-    </div>
+  <div class="vue-tabs__panel-container">
+    <slot />
+  </div>
 </template>
 
 <script>
