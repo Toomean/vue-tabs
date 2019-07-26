@@ -9,7 +9,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
-  "main": "dist/vue-tabs.common.js",
+  "main": "dist/vue-tmn-tabs.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
