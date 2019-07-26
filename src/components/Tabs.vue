@@ -35,6 +35,8 @@ export default {
               class={ this.getTabClasses(index) }
               attrs={ this.getTabAria(index) }
               onClick={ e => this.switchTab(e, index) }
+              // vOn:keyup_right={ () => this.showNextTab() }
+              // vOn:keyup_left={ () => this.showPrevTab() }
             >
               { title }
             </button>
@@ -69,6 +71,13 @@ export default {
     switchTab(e, index) {
       this.activeIndex = index;
     },
+    // showNextTab() {
+    //   this.activeIndex += 1;
+    // },
+    // showPrevTab() {
+    //   this.activeIndex -= 1;
+    // },
+
     isTabActive(index) {
       return this.activeIndex === index;
     },
