@@ -12,6 +12,10 @@ export default {
       type: String,
       default: '',
     },
+    ariaLabelValue: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {
@@ -55,6 +59,7 @@ export default {
         <div
           class="vue-tabs__nav"
           role="tablist"
+          aria-label={ this.ariaLabelValue }
         >
           { this.tabNav }
         </div>
