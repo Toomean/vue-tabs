@@ -25,6 +25,9 @@ export default {
       return this.$slots.default
         .filter(({ tag }) => tag === 'vue-component-2-vue-tabs-item');
     },
+    tabsLength() {
+      return this.tabs.length;
+    },
     tabNav() {
       return this.tabs
         .map(({ componentOptions }, index) => {
@@ -35,8 +38,10 @@ export default {
               class={ this.getTabClasses(index) }
               attrs={ this.getTabAria(index) }
               onClick={ e => this.switchTab(e, index) }
-              // vOn:keyup_right={ () => this.showNextTab() }
-              // vOn:keyup_left={ () => this.showPrevTab() }
+              refInFor='true'
+              ref='tabs'
+              vOn:keyup_right={ () => this.showNextTab() }
+              vOn:keyup_left={ () => this.showPrevTab() }
             >
               { title }
             </button>
@@ -71,12 +76,25 @@ export default {
     switchTab(e, index) {
       this.activeIndex = index;
     },
-    // showNextTab() {
-    //   this.activeIndex += 1;
-    // },
-    // showPrevTab() {
-    //   this.activeIndex -= 1;
-    // },
+    focusActiveTab() {
+      this.$refs.tabs[this.activeIndex].focus();
+    },
+    showNextTab() {
+      const nextIndex = this.activeIndex + 1 >= this.tabsLength
+        ? 0
+        : this.activeIndex + 1;
+
+      this.switchTab(null, nextIndex);
+      this.focusActiveTab();
+    },
+    showPrevTab() {
+      const prevIndex = this.activeIndex - 1 < 0
+        ? this.tabsLength - 1
+        : this.activeIndex - 1;
+
+      this.switchTab(null, prevIndex);
+      this.focusActiveTab();
+    },
 
     isTabActive(index) {
       return this.activeIndex === index;
@@ -90,7 +108,7 @@ export default {
     getTabAria(index) {
       return {
         role: 'tab',
-        tabindex: !this.isTabActive(index) && -1,
+        tabindex: this.isTabActive(index) ? false : -1,
         'aria-selected': this.isTabActive(index) ? 'true' : 'false',
         'aria-controls': `tab-${index}`,
       };
