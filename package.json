@@ -1,6 +1,6 @@
 {
   "name": "vue-tmn-tabs",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
