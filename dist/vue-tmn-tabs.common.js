@@ -158,6 +158,15 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "2638":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _extends(){return _extends=Object.assign||function(a){for(var b,c=1;c<arguments.length;c++)for(var d in b=arguments[c],b)Object.prototype.hasOwnProperty.call(b,d)&&(a[d]=b[d]);return a},_extends.apply(this,arguments)}var normalMerge=["attrs","props","domProps"],toArrayMerge=["class","style","directives"],functionalMerge=["on","nativeOn"],mergeJsxProps=function(a){return a.reduce(function(c,a){for(var b in a)if(!c[b])c[b]=a[b];else if(-1!==normalMerge.indexOf(b))c[b]=_extends({},c[b],a[b]);else if(-1!==toArrayMerge.indexOf(b)){var d=c[b]instanceof Array?c[b]:[c[b]],e=a[b]instanceof Array?a[b]:[a[b]];c[b]=d.concat(e)}else if(-1!==functionalMerge.indexOf(b)){for(var f in a[b])if(c[b][f]){var g=c[b][f]instanceof Array?c[b][f]:[c[b][f]],h=a[b][f]instanceof Array?a[b][f]:[a[b][f]];c[b][f]=g.concat(h)}else c[b][f]=a[b][f];}else if("hook"==b)for(var i in a[b])c[b][i]=c[b][i]?mergeFn(c[b][i],a[b][i]):a[b][i];else c[b]=a[b];return c},{})},mergeFn=function(a,b){return function(){a&&a.apply(this,arguments),b&&b.apply(this,arguments)}};module.exports=mergeJsxProps;
+
+
+/***/ }),
+
 /***/ "2aba":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1040,17 +1049,23 @@ var es6_function_name = __webpack_require__("7f7f");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"43a29416-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=1fe07929&
-var Appvue_type_template_id_1fe07929_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('tabs',[_c('tab',{attrs:{"title":'Tab1'}},[_c('h1',[_vm._v("Tab 1 content")]),_c('p',[_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. !")])]),_c('tab',{attrs:{"title":'Tab2'}},[_c('h1',[_vm._v("Tab 2 content")]),_c('p',[_vm._v("Inventore provident enim eos sint, alias dicta,\n        totam in quo laborum aspernatur officiis.")])]),_c('tab',{attrs:{"title":'Tab3'}},[_c('h1',[_vm._v("Tab 3 content")]),_c('p',[_vm._v("Quis harum dicta, facere incidunt suscipit voluptatum!")])]),_c('tab',{attrs:{"title":'Tab4'}},[_c('h1',[_vm._v("Tab 4 content")]),_c('p',[_vm._v("Some example content!")])])],1)],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"43a29416-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=55b1f64a&
+var Appvue_type_template_id_55b1f64a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('tabs',{attrs:{"transitionName":"fade"}},[_c('tab',{attrs:{"title":'Tab1'}},[_c('h1',[_vm._v("Tab 1 content")]),_c('p',[_vm._v("Lorem ipsum dolor sit amet consectetur adipisicing elit. !")])]),_c('tab',{attrs:{"title":'Tab2'}},[_c('h1',[_vm._v("Tab 2 content")]),_c('p',[_vm._v("Inventore provident enim eos sint, alias dicta,\n        totam in quo laborum aspernatur officiis.")])]),_c('tab',{attrs:{"title":'Tab3'}},[_c('h1',[_vm._v("Tab 3 content")]),_c('p',[_vm._v("Quis harum dicta, facere incidunt suscipit voluptatum!")])]),_c('tab',{attrs:{"title":'Tab4'}},[_c('h1',[_vm._v("Tab 4 content")]),_c('p',[_vm._v("Some example content!")])])],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=1fe07929&
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=55b1f64a&
+
+// EXTERNAL MODULE: ./node_modules/@vue/babel-helper-vue-jsx-merge-props/dist/helper.js
+var helper = __webpack_require__("2638");
+var helper_default = /*#__PURE__*/__webpack_require__.n(helper);
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tabs.vue?vue&type=script&lang=js&
+
+
 
 //
 /* harmony default export */ var Tabsvue_type_script_lang_js_ = ({
@@ -1059,6 +1074,14 @@ var es6_number_constructor = __webpack_require__("c5f6");
     defaultIndex: {
       type: Number,
       default: 0
+    },
+    transitionName: {
+      type: String,
+      default: ''
+    },
+    ariaLabelValue: {
+      type: String,
+      default: ''
     }
   },
   data: function data() {
@@ -1073,64 +1096,131 @@ var es6_number_constructor = __webpack_require__("c5f6");
         return tag === 'vue-component-2-vue-tabs-item';
       });
     },
-    tabsNavigation: function tabsNavigation() {
+    tabsLength: function tabsLength() {
+      return this.tabs.length;
+    },
+    tabNav: function tabNav() {
       var _this = this;
 
       var h = this.$createElement;
       return this.tabs.map(function (_ref2, index) {
         var componentOptions = _ref2.componentOptions;
         var title = componentOptions.propsData.title;
-        return h("div", {
-          "class": "vue-tabs__nav-item",
-          "attrs": {
-            "role": "tab",
-            "aria-selected": "false",
-            "aria-controls": index
-          },
+        return h("button", helper_default()([{
+          "class": _this.getTabClasses(index)
+        }, {
+          "attrs": _this.getTabAria(index)
+        }, {
           "on": {
-            "click": function click(e) {
-              return _this.switchTab(e, index);
-            }
-          }
-        }, [title]);
+            "click": function click() {
+              return _this.switchTab(index);
+            },
+            "keyup": [function ($event) {
+              if (!("button" in $event) && _this._k($event.keyCode, "right", 39, $event.key, ["Right", "ArrowRight"])) return null;
+              if ("button" in $event && $event.button !== 2) return null;
+              return function () {
+                return _this.showNextTab();
+              }($event);
+            }, function ($event) {
+              if (!("button" in $event) && _this._k($event.keyCode, "left", 37, $event.key, ["Left", "ArrowLeft"])) return null;
+              if ("button" in $event && $event.button !== 0) return null;
+              return function () {
+                return _this.showPrevTab();
+              }($event);
+            }, function ($event) {
+              if (!("button" in $event) && $event.keyCode !== 36) return null;
+              return function () {
+                return _this.switchTab(0);
+              }($event);
+            }, function ($event) {
+              if (!("button" in $event) && $event.keyCode !== 35) return null;
+              return function () {
+                return _this.switchTab(_this.tabsLength - 1);
+              }($event);
+            }]
+          },
+          "refInFor": 'true',
+          "ref": 'tabs'
+        }]), [title]);
       });
     },
-    tabsNavWrapper: function tabsNavWrapper() {
+    tabList: function tabList() {
       var h = this.$createElement;
       return h("div", {
         "class": "vue-tabs__nav",
         "attrs": {
-          "role": "tablist"
+          "role": "tablist",
+          "aria-label": this.ariaLabelValue
         }
-      }, [this.tabsNavigation]);
+      }, [this.tabNav]);
     },
-    tabsContent: function tabsContent() {
+    tabPanels: function tabPanels() {
+      var _this2 = this;
+
       var h = this.$createElement;
-      return h("div", {
-        "class": "vue-tabs__content",
-        "attrs": {
-          "role": "tabpanel"
-        }
-      }, [h("transition", {
-        "attrs": {
-          "name": "fade",
-          "mode": "out-in"
-        }
-      }, [h("div", {
-        "key": this.activeIndex
-      }, [this.tabs[this.activeIndex]])])]);
+      return this.tabs.map(function (panel, index) {
+        return h("div", helper_default()([{
+          "class": "vue-tabs__panel",
+          "key": index
+        }, {
+          "attrs": _this2.getPanelAria(index)
+        }]), [panel]);
+      });
     }
   },
   methods: {
-    switchTab: function switchTab(e, index) {
+    switchTab: function switchTab(index) {
       this.activeIndex = index;
+      this.focusActiveTab();
+    },
+    focusActiveTab: function focusActiveTab() {
+      this.$refs.tabs[this.activeIndex].focus();
+    },
+    showNextTab: function showNextTab() {
+      var nextIndex = this.activeIndex + 1 >= this.tabsLength ? 0 : this.activeIndex + 1;
+      this.switchTab(nextIndex);
+    },
+    showPrevTab: function showPrevTab() {
+      var prevIndex = this.activeIndex - 1 < 0 ? this.tabsLength - 1 : this.activeIndex - 1;
+      this.switchTab(prevIndex);
+    },
+    isTabActive: function isTabActive(index) {
+      return this.activeIndex === index;
+    },
+    getTabClasses: function getTabClasses(index) {
+      return ['vue-tabs__nav-item', {
+        '--active': this.isTabActive(index)
+      }];
+    },
+    getTabAria: function getTabAria(index) {
+      return {
+        role: 'tab',
+        tabindex: this.isTabActive(index) ? false : -1,
+        'aria-selected': this.isTabActive(index) ? 'true' : 'false',
+        'aria-controls': "tab-".concat(index)
+      };
+    },
+    getPanelAria: function getPanelAria(index) {
+      return {
+        role: 'tabpanel',
+        tabindex: 0,
+        hidden: this.activeIndex !== index,
+        'aria-labelledby': "tab-".concat(index)
+      };
     }
   },
   render: function render() {
     var h = arguments[0];
     return h("div", {
       "class": "vue-tabs"
-    }, [this.tabsNavWrapper, this.tabsContent]);
+    }, [this.tabList, h("transition", {
+      "attrs": {
+        "name": this.transitionName,
+        "mode": "out-in"
+      }
+    }, [h("div", {
+      "key": this.activeIndex
+    }, [this.tabPanels])])]);
   }
 });
 // CONCATENATED MODULE: ./src/components/Tabs.vue?vue&type=script&lang=js&
@@ -1254,12 +1344,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var Tabs = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"43a29416-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tab.vue?vue&type=template&id=5252fcbb&
-var Tabvue_type_template_id_5252fcbb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-tabs__item"},[_vm._t("default")],2)}
-var Tabvue_type_template_id_5252fcbb_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"43a29416-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tab.vue?vue&type=template&id=e5325766&
+var Tabvue_type_template_id_e5325766_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-tabs__panel-container"},[_vm._t("default")],2)}
+var Tabvue_type_template_id_e5325766_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/Tab.vue?vue&type=template&id=5252fcbb&
+// CONCATENATED MODULE: ./src/components/Tab.vue?vue&type=template&id=e5325766&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tab.vue?vue&type=script&lang=js&
 //
@@ -1293,8 +1383,8 @@ var Tabvue_type_template_id_5252fcbb_staticRenderFns = []
 
 var Tab_component = normalizeComponent(
   components_Tabvue_type_script_lang_js_,
-  Tabvue_type_template_id_5252fcbb_render,
-  Tabvue_type_template_id_5252fcbb_staticRenderFns,
+  Tabvue_type_template_id_e5325766_render,
+  Tabvue_type_template_id_e5325766_staticRenderFns,
   false,
   null,
   null,
@@ -1353,7 +1443,7 @@ var Appvue_type_style_index_0_lang_scss_ = __webpack_require__("5c0b");
 
 var App_component = normalizeComponent(
   src_Appvue_type_script_lang_js_,
-  Appvue_type_template_id_1fe07929_render,
+  Appvue_type_template_id_55b1f64a_render,
   staticRenderFns,
   false,
   null,
