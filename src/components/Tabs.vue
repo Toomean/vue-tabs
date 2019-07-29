@@ -27,7 +27,7 @@ export default {
   computed: {
     tabs() {
       return this.$slots.default
-        .filter(({ tag }) => tag === 'vue-component-2-vue-tabs-item');
+        .filter(({ tag }) => tag.includes('vue-tabs-item'));
     },
     tabsLength() {
       return this.tabs.length;

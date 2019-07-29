@@ -253,6 +253,24 @@ module.exports = Object.create || function create(O, Properties) {
 
 /***/ }),
 
+/***/ "2b4c":
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__("5537")('wks');
+var uid = __webpack_require__("ca5a");
+var Symbol = __webpack_require__("7726").Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
+
 /***/ "2d00":
 /***/ (function(module, exports) {
 
@@ -269,6 +287,26 @@ var toString = {}.toString;
 module.exports = function (it) {
   return toString.call(it).slice(8, -1);
 };
+
+
+/***/ }),
+
+/***/ "2fdb":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// 21.1.3.7 String.prototype.includes(searchString, position = 0)
+
+var $export = __webpack_require__("5ca1");
+var context = __webpack_require__("d2c8");
+var INCLUDES = 'includes';
+
+$export($export.P + $export.F * __webpack_require__("5147")(INCLUDES), 'String', {
+  includes: function includes(searchString /* , position = 0 */) {
+    return !!~context(this, searchString, INCLUDES)
+      .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
 
 
 /***/ }),
@@ -311,6 +349,25 @@ module.exports = function (bitmap, value) {
     writable: !(bitmap & 4),
     value: value
   };
+};
+
+
+/***/ }),
+
+/***/ "5147":
+/***/ (function(module, exports, __webpack_require__) {
+
+var MATCH = __webpack_require__("2b4c")('match');
+module.exports = function (KEY) {
+  var re = /./;
+  try {
+    '/./'[KEY](re);
+  } catch (e) {
+    try {
+      re[MATCH] = false;
+      return !'/./'[KEY](re);
+    } catch (f) { /* empty */ }
+  } return true;
 };
 
 
@@ -430,6 +487,26 @@ var cof = __webpack_require__("2d95");
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
+
+
+/***/ }),
+
+/***/ "6762":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://github.com/tc39/Array.prototype.includes
+var $export = __webpack_require__("5ca1");
+var $includes = __webpack_require__("c366")(true);
+
+$export($export.P, 'Array', {
+  includes: function includes(el /* , fromIndex = 0 */) {
+    return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+__webpack_require__("9c6c")('includes');
 
 
 /***/ }),
@@ -664,6 +741,20 @@ module.exports = function (fn, that, length) {
 
 /***/ }),
 
+/***/ "9c6c":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 22.1.3.31 Array.prototype[@@unscopables]
+var UNSCOPABLES = __webpack_require__("2b4c")('unscopables');
+var ArrayProto = Array.prototype;
+if (ArrayProto[UNSCOPABLES] == undefined) __webpack_require__("32e9")(ArrayProto, UNSCOPABLES, {});
+module.exports = function (key) {
+  ArrayProto[UNSCOPABLES][key] = true;
+};
+
+
+/***/ }),
+
 /***/ "9def":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -721,6 +812,21 @@ var trim = exporter.trim = function (string, TYPE) {
 };
 
 module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "aae3":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.2.8 IsRegExp(argument)
+var isObject = __webpack_require__("d3f4");
+var cof = __webpack_require__("2d95");
+var MATCH = __webpack_require__("2b4c")('match');
+module.exports = function (it) {
+  var isRegExp;
+  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : cof(it) == 'RegExp');
+};
 
 
 /***/ }),
@@ -902,6 +1008,21 @@ module.exports = function (object, names) {
 
 /***/ }),
 
+/***/ "d2c8":
+/***/ (function(module, exports, __webpack_require__) {
+
+// helper for String#{startsWith, endsWith, includes}
+var isRegExp = __webpack_require__("aae3");
+var defined = __webpack_require__("be13");
+
+module.exports = function (that, searchString, NAME) {
+  if (isRegExp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
+  return String(defined(that));
+};
+
+
+/***/ }),
+
 /***/ "d3f4":
 /***/ (function(module, exports) {
 
@@ -1024,10 +1145,18 @@ var es6_function_name = __webpack_require__("7f7f");
 var helper = __webpack_require__("2638");
 var helper_default = /*#__PURE__*/__webpack_require__.n(helper);
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
+var es7_array_includes = __webpack_require__("6762");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
+var es6_string_includes = __webpack_require__("2fdb");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Tabs.vue?vue&type=script&lang=js&
+
+
 
 
 
@@ -1057,7 +1186,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
     tabs: function tabs() {
       return this.$slots.default.filter(function (_ref) {
         var tag = _ref.tag;
-        return tag === 'vue-component-2-vue-tabs-item';
+        return tag.includes('vue-tabs-item');
       });
     },
     tabsLength: function tabsLength() {
