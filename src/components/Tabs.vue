@@ -24,16 +24,16 @@ export default {
     };
   },
 
-  computed: {
-    tabs() {
+  methods: {
+    getTabs() {
       return this.$slots.default
-        .filter(({ tag }) => tag.includes('vue-tabs-item'));
+        .filter(({ tag }) => tag && tag.includes('vue-tabs-item'));
     },
-    tabsLength() {
-      return this.tabs.length;
+    getTabsLength() {
+      return this.getTabs().length;
     },
-    tabNav() {
-      return this.tabs
+    renderTabNav() {
+      return this.getTabs()
         .map(({ componentOptions }, index) => {
           const { title } = componentOptions.propsData;
 
@@ -47,26 +47,26 @@ export default {
               vOn:keyup_right={ () => this.showNextTab() }
               vOn:keyup_left={ () => this.showPrevTab() }
               vOn:keyup_36={ () => this.switchTab(0) }
-              vOn:keyup_35={ () => this.switchTab(this.tabsLength - 1) }
+              vOn:keyup_35={ () => this.switchTab(this.getTabsLength() - 1) }
             >
               { title }
             </button>
           );
         });
     },
-    tabList() {
+    renderTabList() {
       return (
         <div
           class="vue-tabs__nav"
           role="tablist"
           aria-label={ this.ariaLabelValue }
         >
-          { this.tabNav }
+          { this.renderTabNav() }
         </div>
       );
     },
-    tabPanels() {
-      return this.tabs
+    renderTabPanels() {
+      return this.getTabs()
         .map((panel, index) => (
           <div
             class="vue-tabs__panel"
@@ -77,9 +77,7 @@ export default {
           </div>
         ));
     },
-  },
 
-  methods: {
     switchTab(index) {
       this.activeIndex = index;
 
@@ -89,7 +87,7 @@ export default {
       this.$refs.tabs[this.activeIndex].focus();
     },
     showNextTab() {
-      const nextIndex = this.activeIndex + 1 >= this.tabsLength
+      const nextIndex = this.activeIndex + 1 >= this.getTabsLength()
         ? 0
         : this.activeIndex + 1;
 
@@ -97,7 +95,7 @@ export default {
     },
     showPrevTab() {
       const prevIndex = this.activeIndex - 1 < 0
-        ? this.tabsLength - 1
+        ? this.getTabsLength() - 1
         : this.activeIndex - 1;
 
       this.switchTab(prevIndex);
@@ -133,10 +131,10 @@ export default {
   render() {
     return (
       <div class="vue-tabs">
-        { this.tabList }
+        { this.renderTabList() }
         <transition name={ this.transitionName } mode="out-in">
           <div key={ this.activeIndex }>
-            { this.tabPanels }
+            { this.renderTabPanels() }
           </div>
         </transition>
       </div>
@@ -162,15 +160,6 @@ export default {
     }
   }
   #{$bl}__panel-container {
-  }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity .4s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
   }
 }
 </style>

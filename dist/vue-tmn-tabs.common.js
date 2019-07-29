@@ -1182,21 +1182,21 @@ var es6_number_constructor = __webpack_require__("c5f6");
       activeIndex: this.defaultIndex
     };
   },
-  computed: {
-    tabs: function tabs() {
+  methods: {
+    getTabs: function getTabs() {
       return this.$slots.default.filter(function (_ref) {
         var tag = _ref.tag;
-        return tag.includes('vue-tabs-item');
+        return tag && tag.includes('vue-tabs-item');
       });
     },
-    tabsLength: function tabsLength() {
-      return this.tabs.length;
+    getTabsLength: function getTabsLength() {
+      return this.getTabs().length;
     },
-    tabNav: function tabNav() {
+    renderTabNav: function renderTabNav() {
       var _this = this;
 
       var h = this.$createElement;
-      return this.tabs.map(function (_ref2, index) {
+      return this.getTabs().map(function (_ref2, index) {
         var componentOptions = _ref2.componentOptions;
         var title = componentOptions.propsData.title;
         return h("button", helper_default()([{
@@ -1228,7 +1228,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
             }, function ($event) {
               if (!("button" in $event) && $event.keyCode !== 35) return null;
               return function () {
-                return _this.switchTab(_this.tabsLength - 1);
+                return _this.switchTab(_this.getTabsLength() - 1);
               }($event);
             }]
           },
@@ -1237,7 +1237,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
         }]), [title]);
       });
     },
-    tabList: function tabList() {
+    renderTabList: function renderTabList() {
       var h = this.$createElement;
       return h("div", {
         "class": "vue-tabs__nav",
@@ -1245,13 +1245,13 @@ var es6_number_constructor = __webpack_require__("c5f6");
           "role": "tablist",
           "aria-label": this.ariaLabelValue
         }
-      }, [this.tabNav]);
+      }, [this.renderTabNav()]);
     },
-    tabPanels: function tabPanels() {
+    renderTabPanels: function renderTabPanels() {
       var _this2 = this;
 
       var h = this.$createElement;
-      return this.tabs.map(function (panel, index) {
+      return this.getTabs().map(function (panel, index) {
         return h("div", helper_default()([{
           "class": "vue-tabs__panel",
           "key": index
@@ -1259,9 +1259,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
           "attrs": _this2.getPanelAria(index)
         }]), [panel]);
       });
-    }
-  },
-  methods: {
+    },
     switchTab: function switchTab(index) {
       this.activeIndex = index;
       this.focusActiveTab();
@@ -1270,11 +1268,11 @@ var es6_number_constructor = __webpack_require__("c5f6");
       this.$refs.tabs[this.activeIndex].focus();
     },
     showNextTab: function showNextTab() {
-      var nextIndex = this.activeIndex + 1 >= this.tabsLength ? 0 : this.activeIndex + 1;
+      var nextIndex = this.activeIndex + 1 >= this.getTabsLength() ? 0 : this.activeIndex + 1;
       this.switchTab(nextIndex);
     },
     showPrevTab: function showPrevTab() {
-      var prevIndex = this.activeIndex - 1 < 0 ? this.tabsLength - 1 : this.activeIndex - 1;
+      var prevIndex = this.activeIndex - 1 < 0 ? this.getTabsLength() - 1 : this.activeIndex - 1;
       this.switchTab(prevIndex);
     },
     isTabActive: function isTabActive(index) {
@@ -1306,14 +1304,14 @@ var es6_number_constructor = __webpack_require__("c5f6");
     var h = arguments[0];
     return h("div", {
       "class": "vue-tabs"
-    }, [this.tabList, h("transition", {
+    }, [this.renderTabList(), h("transition", {
       "attrs": {
         "name": this.transitionName,
         "mode": "out-in"
       }
     }, [h("div", {
       "key": this.activeIndex
-    }, [this.tabPanels])])]);
+    }, [this.renderTabPanels()])])]);
   }
 });
 // CONCATENATED MODULE: ./src/components/Tabs.vue?vue&type=script&lang=js&
@@ -1486,17 +1484,12 @@ var Tab_component = normalizeComponent(
 )
 
 /* harmony default export */ var Tab = (Tab_component.exports);
-// CONCATENATED MODULE: ./src/main.js
+// CONCATENATED MODULE: ./src/index.js
 
-// import Vue from 'vue';
-// import App from './App.vue';
 
- // Vue.config.productionTip = false;
-// new Vue({
-//   render: h => h(App),
-// }).$mount('#app');
 
-var main_install = function install(VueLib) {
+
+var src_install = function install(VueLib) {
   VueLib.component(Tabs.name, Tabs);
   VueLib.component(Tab.name, Tab);
 };
@@ -1505,7 +1498,7 @@ var main_install = function install(VueLib) {
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
 /* concated harmony reexport Tabs */__webpack_require__.d(__webpack_exports__, "Tabs", function() { return Tabs; });
 /* concated harmony reexport Tab */__webpack_require__.d(__webpack_exports__, "Tab", function() { return Tab; });
-/* concated harmony reexport install */__webpack_require__.d(__webpack_exports__, "install", function() { return main_install; });
+/* concated harmony reexport install */__webpack_require__.d(__webpack_exports__, "install", function() { return src_install; });
 
 
 

@@ -5,7 +5,7 @@
         <h1>Tab 1 content</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
       </tab>
-      <tab :title="'Tab2'">
+      <tab :title="'Tab2'" v-if="!hide">
         <h1>Tab 2 content</h1>
         <p>Inventore provident enim eos sint, alias dicta,
           totam in quo laborum aspernatur officiis.</p>
@@ -19,6 +19,8 @@
         <p>Some example content!</p>
       </tab>
     </tabs>
+
+    <button @click="toggleHide">Toggle hide</button>
   </div>
 </template>
 
@@ -31,6 +33,18 @@ export default {
   components: {
     Tabs,
     Tab,
+  },
+  data() {
+    return {
+      hide: false,
+    };
+  },
+  methods: {
+    toggleHide() {
+      this.hide = !this.hide;
+
+      console.log(this.hide);
+    },
   },
 };
 </script>
