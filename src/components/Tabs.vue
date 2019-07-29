@@ -37,11 +37,13 @@ export default {
             <button
               class={ this.getTabClasses(index) }
               attrs={ this.getTabAria(index) }
-              onClick={ e => this.switchTab(e, index) }
+              onClick={ () => this.switchTab(index) }
               refInFor='true'
               ref='tabs'
               vOn:keyup_right={ () => this.showNextTab() }
               vOn:keyup_left={ () => this.showPrevTab() }
+              vOn:keyup_36={ () => this.switchTab(0) }
+              vOn:keyup_35={ () => this.switchTab(this.tabsLength - 1) }
             >
               { title }
             </button>
@@ -73,8 +75,10 @@ export default {
   },
 
   methods: {
-    switchTab(e, index) {
+    switchTab(index) {
       this.activeIndex = index;
+
+      this.focusActiveTab();
     },
     focusActiveTab() {
       this.$refs.tabs[this.activeIndex].focus();
@@ -84,16 +88,14 @@ export default {
         ? 0
         : this.activeIndex + 1;
 
-      this.switchTab(null, nextIndex);
-      this.focusActiveTab();
+      this.switchTab(nextIndex);
     },
     showPrevTab() {
       const prevIndex = this.activeIndex - 1 < 0
         ? this.tabsLength - 1
         : this.activeIndex - 1;
 
-      this.switchTab(null, prevIndex);
-      this.focusActiveTab();
+      this.switchTab(prevIndex);
     },
 
     isTabActive(index) {
