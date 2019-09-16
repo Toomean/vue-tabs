@@ -21,6 +21,18 @@
     </tabs>
 
     <button @click="toggleHide">Toggle hide</button>
+
+    <tabs>
+      <tab :title="'Tab1'">
+        <h1>Tab 1 content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
+      </tab>
+      <tab :title="'Tab2'" v-if="!hide">
+        <h1>Tab 2 content</h1>
+        <p>Inventore provident enim eos sint, alias dicta,
+          totam in quo laborum aspernatur officiis.</p>
+      </tab>
+    </tabs>
   </div>
 </template>
 

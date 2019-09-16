@@ -27,7 +27,9 @@ export default {
   methods: {
     getTabs() {
       return this.$slots.default
-        .filter(({ tag }) => tag && tag.includes('vue-tabs-item'));
+        ? this.$slots.default
+          .filter(({ tag }) => tag && tag.includes('vue-tabs-item'))
+        : [];
     },
     getTabsLength() {
       return this.getTabs().length;
@@ -129,6 +131,10 @@ export default {
   },
 
   render() {
+    if (!this.getTabs().length) {
+      return (null);
+    }
+
     return (
       <div class="vue-tabs">
         { this.renderTabList() }

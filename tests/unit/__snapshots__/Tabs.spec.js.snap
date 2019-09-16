@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab.vue renders passed tabs correctly 1`] = `
+<div class="vue-tabs">
+  <div role="tablist" aria-label="" class="vue-tabs__nav"><button role="tab" aria-selected="true" aria-controls="tab-0" class="vue-tabs__nav-item --active">tab-1</button><button role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-1" class="vue-tabs__nav-item">tab-2</button><button role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-2" class="vue-tabs__nav-item">tab-3</button><button role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-3" class="vue-tabs__nav-item">tab-4</button></div>
+  <div name="" mode="out-in">
+    <div role="tabpanel" tabindex="0" aria-labelledby="tab-0" class="vue-tabs__panel">
+      <div class="vue-tabs__panel-container">
+        <div>tab-1-content</div>
+      </div>
+    </div>
+    <div role="tabpanel" tabindex="0" hidden="hidden" aria-labelledby="tab-1" class="vue-tabs__panel">
+      <div class="vue-tabs__panel-container">
+        <div>tab-2-content</div>
+      </div>
+    </div>
+    <div role="tabpanel" tabindex="0" hidden="hidden" aria-labelledby="tab-2" class="vue-tabs__panel">
+      <div class="vue-tabs__panel-container">
+        <div>tab-3-content</div>
+      </div>
+    </div>
+    <div role="tabpanel" tabindex="0" hidden="hidden" aria-labelledby="tab-3" class="vue-tabs__panel">
+      <div class="vue-tabs__panel-container">
+        <div>tab-4-content</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
