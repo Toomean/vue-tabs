@@ -42,8 +42,6 @@ export default {
   methods: {
     toggleHide() {
       this.hide = !this.hide;
-
-      console.log(this.hide);
     },
   },
 };
