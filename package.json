@@ -86,7 +86,8 @@
       "jest-watch-typeahead/testname"
     ],
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/components/*.{js,vue}", "!**/node_modules/**"]
+    "collectCoverageFrom": ["src/components/*.{js,vue}", "!**/node_modules/**"],
+    "coverageReporters": ["lcov", "text-summary"]
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
