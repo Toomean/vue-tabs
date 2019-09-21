@@ -13,6 +13,7 @@
   "main": "dist/vue-tmn-tabs.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "coveralls": "^3.0.6",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -86,8 +87,14 @@
       "jest-watch-typeahead/testname"
     ],
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/components/*.{js,vue}", "!**/node_modules/**"],
-    "coverageReporters": ["lcov", "text-summary"]
+    "collectCoverageFrom": [
+      "src/components/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text-summary"
+    ]
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
