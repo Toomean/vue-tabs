@@ -22,7 +22,7 @@
 
     <button @click="toggleHide">Toggle hide</button>
 
-    <tabs>
+    <tabs transitionName="fade">
       <tab :title="'Tab1'">
         <h1>Tab 1 content</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
@@ -67,5 +67,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
 }
 </style>
