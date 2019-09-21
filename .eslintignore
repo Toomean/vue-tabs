@@ -3,4 +3,5 @@
 
 # Ignore built files except build/index.js
 dist/*
+coverage/*
 # !build/index.js

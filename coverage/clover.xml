@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1569088556365" clover="3.2.0">
+  <project timestamp="1569088556365" name="All files">
+    <metrics statements="27" coveredstatements="19" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="3" elements="47" coveredelements="32" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1">
+      <file name="Tabs.vue" path="/Users/Tommy/Sites/vue-tabs/src/components/Tabs.vue">
+        <metrics statements="27" coveredstatements="19" conditionals="16" coveredconditionals="10" methods="4" coveredmethods="3"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="29" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="21" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="42" count="4" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="5" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="92" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="99" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="107" count="12" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="116" count="4" type="stmt"/>
+        <line num="124" count="4" type="stmt"/>
+        <line num="133" count="2" type="stmt"/>
+        <line num="134" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="138" count="1" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>
