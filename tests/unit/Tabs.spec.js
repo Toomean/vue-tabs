@@ -54,5 +54,37 @@ describe('Tab.vue', () => {
         });
       }
     });
+
+    describe('Tab keyboard interactions', () => {
+      const tabItems = wrapper.findAll('.vue-tabs__nav-item');
+
+      it('Shows next tab correctly', () => {
+        wrapper.vm.activeIndex = 0;
+
+        for (let i = wrapper.vm.activeIndex; i <= tabItems.length * 2; i += 1) {
+          const nextIndex = i % tabItems.length;
+
+          expect(tabItems.at(nextIndex).classes()).toContain('--active');
+          expect(wrapper.vm.getPanelAria(nextIndex).hidden).toBe(false);
+
+          tabItems.at(nextIndex).trigger('keyup.right');
+        }
+      });
+
+      it('Shows prev tab correctly', () => {
+        wrapper.vm.activeIndex = 0;
+
+        for (let i = wrapper.vm.activeIndex; i <= tabItems.length * 2; i += 1) {
+          const prevIndex = wrapper.vm.activeIndex - 1 < 0
+            ? tabItems.length - 1
+            : wrapper.vm.activeIndex - 1;
+
+          tabItems.at(prevIndex).trigger('keyup.left');
+
+          expect(tabItems.at(prevIndex).classes()).toContain('--active');
+          expect(wrapper.vm.getPanelAria(prevIndex).hidden).toBe(false);
+        }
+      });
+    });
   });
 });

@@ -89,11 +89,9 @@ export default {
       this.$refs.tabs[this.activeIndex].focus();
     },
     showNextTab() {
-      const nextIndex = this.activeIndex + 1 >= this.getTabsLength()
-        ? 0
-        : this.activeIndex + 1;
+      const nextIndex = this.activeIndex + 1;
 
-      this.switchTab(nextIndex);
+      this.switchTab(nextIndex % this.getTabsLength());
     },
     showPrevTab() {
       const prevIndex = this.activeIndex - 1 < 0
