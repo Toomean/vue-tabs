@@ -11,6 +11,12 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
+  "keywords": [
+    "vue",
+    "tabs",
+    "component",
+    "vue-tabs"
+  ],
   "main": "dist/vue-tmn-tabs.common.js",
   "dependencies": {},
   "devDependencies": {
