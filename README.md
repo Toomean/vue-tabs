@@ -15,12 +15,25 @@ $ yarn add vue-tmn-tabs
 
 ## Register components
 
+The most common way is to register components globally
 ```js
 import Vue from 'vue';
-import { Tabs, Tab } from 'vue-tmn-tabs';
+import { Tab, Tabs } from 'vue-tmn-tabs';
 
 Vue.component('tab', Tab);
-Vue.component('tabs', Tab);
+Vue.component('tabs', Tabs);
+```
+
+You can also do this locally
+```js
+import { Tabs, Tab } from 'vue-tmn-tabs';
+
+export default {
+    components: {
+        Tab,
+        Tabs,
+    },
+};
 ```
 
 ## Add styling
@@ -59,7 +72,7 @@ Vue.component('tabs', Tab);
         <h1>Tab 1 content</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. !</p>
     </tab>
-    <tab :title="'Tab2'" v-if="!hide">
+    <tab :title="'Tab2'">
         <h1>Tab 2 content</h1>
         <p>Inventore provident enim eos sint, alias dicta,
             totam in quo laborum aspernatur officiis.</p>
@@ -74,3 +87,17 @@ Vue.component('tabs', Tab);
     </tab>
 </tabs>
 ```
+
+## Props
+### Tab
+Tab component has 1 prop and default slot:
+
+- title - defines the title of a tab;
+- slot - you can pass content into it.
+
+### Tabs
+Tabs component has 3 props:
+
+- defaultIndex - defines default active tab index;
+- transitionName - transition name for tabs change animation;
+- ariaLabelValue - is used to define a string that labels the current element
