@@ -92,12 +92,12 @@ export default {
 ### Tab
 Tab component has 1 prop and default slot:
 
-- title - defines the title of a tab;
-- slot - you can pass content into it.
+- `title` - defines the title of a tab;
+- `slot` - you can pass content into it.
 
 ### Tabs
 Tabs component has 3 props:
 
-- defaultIndex - defines default active tab index;
-- transitionName - transition name for tabs change animation;
-- ariaLabelValue - is used to define a string that labels the current element
+- `defaultIndex` - defines default active tab index;
+- `transitionName` - transition name for tabs change animation;
+- `ariaLabelValue` - is used to define a string that labels the current element
