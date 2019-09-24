@@ -13,9 +13,6 @@
   },
   "main": "dist/vue-tmn-tabs.common.js",
   "dependencies": {
-    "core-js": "^2.6.5",
-    "coveralls": "^3.0.6",
-    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
@@ -33,7 +30,11 @@
     "lint-staged": "^8.1.5",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+
+    "core-js": "^2.6.5",
+    "coveralls": "^3.0.6",
+    "vue": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,

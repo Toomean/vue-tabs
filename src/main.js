@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import Vue from 'vue';
+/* eslint-enable import/no-extraneous-dependencies */
 import App from './App.vue';
 
 Vue.config.productionTip = false;
