@@ -1,6 +1,6 @@
 {
   "name": "vue-tmn-tabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": "github:Toomean/vue-tabs",
   "scripts": {
@@ -12,8 +12,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "main": "dist/vue-tmn-tabs.common.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-e2e-cypress": "^3.9.0",
@@ -25,16 +24,15 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "core-js": "^2.6.5",
+    "coveralls": "^3.0.6",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10",
-
-    "core-js": "^2.6.5",
-    "coveralls": "^3.0.6",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,
