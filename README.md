@@ -1,4 +1,8 @@
-# vue-tabs [![Build Status](https://travis-ci.com/Toomean/vue-tabs.svg?branch=master)](https://travis-ci.com/Toomean/vue-tabs) [![Coverage Status](https://coveralls.io/repos/github/Toomean/vue-tabs/badge.svg?branch=master)](https://coveralls.io/github/Toomean/vue-tabs?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+# vue-tabs [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+## Project status
+
+This package is feature-complete and preserved for existing Vue 2 projects. It is not maintained; no further updates—including security updates, new features, or Vue 3 support—are planned. It remains available on npm. See the [official Vue 2 EOL notice](https://v2.vuejs.org/eol/) for Vue 2 lifecycle information.
 
 The main idea of this package is to have a standalone tabs component that provides CSS classes to make it fit your project's style guide.
 Supports [WAI ARIA for tabs with automatic activation](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html)
